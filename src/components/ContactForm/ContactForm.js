@@ -11,8 +11,8 @@ import {
   UserIcon,
 } from './ContactForm.Styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from '../../redux/selectors';
-import { addContact } from '../../redux/contactSlice';
+import { selectContacts } from '../../redux/selectors';
+import { addContact } from '../../redux/api';
 
 
 const validation = Yup.object().shape({
@@ -32,9 +32,9 @@ const validation = Yup.object().shape({
     .min(9, 'Please enter at least 9 characters'),
 });
 
-const ContactForm = () => {
+export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const handleSubmit = (values, actions) => {
     const nameExists = contacts.some(
       contact => contact.name.toLowerCase() === values.name.toLowerCase()
@@ -43,7 +43,7 @@ const ContactForm = () => {
       alert(`${values.name} is already in contacts.`);
     } else {
       dispatch(addContact(values));
-      actions.resetForm();
+      actions.resetForm({ name: '', phone: '' });
     }
   };
 

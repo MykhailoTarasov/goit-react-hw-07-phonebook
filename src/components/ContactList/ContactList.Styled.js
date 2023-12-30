@@ -27,7 +27,6 @@ export const ListItem = styled.li`
 
   &:hover {
     transform: scale(1.03);
-    cursor: zoom-in;
   }
 `;
 
