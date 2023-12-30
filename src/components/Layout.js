@@ -13,8 +13,10 @@ export const Container = styled.div`
 
   text-align: center;
   max-width: 400px;
- 
-  margin: 20px auto 20px auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 20px;
   
   color: #010101;
