@@ -6,12 +6,12 @@ const Loader = () => {
         <StyledLoader>
             <Hourglass
             visible={true}
-            height="80"
-            width="80"
+            height="40"
+            width="40"
             ariaLabel="hourglass-loading"
             wrapperStyle={{}}
             wrapperClass=""
-            colors={['#b6ddd8', '#b6ddd8']}
+            colors={['#5dd7d2', '#5dd7d2']}
           />
         </StyledLoader>
     )
